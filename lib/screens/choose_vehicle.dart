@@ -19,7 +19,12 @@ class ChooseVehicle extends StatelessWidget {
     return Scaffold(
         body: Container(
       padding: const EdgeInsets.only(top: 50, left: 30, right: 30),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+            colorFilter: ColorFilter.mode(
+                Colors.grey.shade100.withOpacity(0.2), BlendMode.dstOut),
+            fit: BoxFit.cover,
+            image: const AssetImage('asset/image/mapImage.png')),
         color: Colors.grey,
       ),
       child: Column(
@@ -161,13 +166,16 @@ class _CarListState extends State<CarList> {
                 Container(
                   height: 50,
                   width: 50,
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey.shade200,
-                        spreadRadius: 1.5,
-                        blurRadius: 3.25,
-                        offset: const Offset(0, 3))
-                  ], borderRadius: BorderRadius.circular(25)),
+                  decoration: BoxDecoration(
+                      color: AppColors.secondaryBackground,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black.withOpacity(0.20),
+                            spreadRadius: 4,
+                            blurRadius: 4,
+                            offset: const Offset(0, 3))
+                      ],
+                      borderRadius: BorderRadius.circular(25)),
                   child: const Icon(Icons.arrow_back_ios_new),
                 )
               ],
